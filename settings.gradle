@@ -1,0 +1,5 @@
+rootProject.name = "celesea"
+
+include "celesea-engine"
+include "celesea-process"
+
