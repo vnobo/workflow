@@ -1,0 +1,8 @@
+plugins {
+    id "java-library"
+}
+
+dependencies {
+    api("org.springframework.data:spring-data-commons")
+    api("io.r2dbc:r2dbc-postgresql")
+}

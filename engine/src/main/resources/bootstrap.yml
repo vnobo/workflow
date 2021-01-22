@@ -1,0 +1,35 @@
+app.server.ip: 127.0.0.1
+
+logging.level:
+  com.celesea.engine.*: debug
+  org.springframework.r2dbc: debug
+
+server:
+  port: 0
+  shutdown: graceful
+
+spring:
+  application.name: celesea-engine
+  cloud:
+    loadbalancer.ribbon.enabled: false
+    nacos.config:
+      file-extension: yaml
+      server-addr: ${app.server.ip}:8848
+  r2dbc:
+    url: jdbc:postgres://${app.server.ip}:5432/celesea
+    username: farmer
+    password: q1w2e3..
+  rabbitmq:
+    host: ${app.server.ip}
+    username: farmer
+    password: q1w2e3..
+    listener.simple.retry:
+      enabled: false
+      max-attempts: 5
+      initial-interval: 2s
+      max-interval: 10s
+      multiplier: 2
+  task.execution.pool:
+    keep-alive: 10s
+  codec:
+    log-request-details: true
