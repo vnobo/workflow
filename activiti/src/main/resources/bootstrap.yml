@@ -1,24 +1,24 @@
 app.server.ip: 127.0.0.1
 
 logging.level:
-  com.celesea.engine.*: debug
-  org.springframework.r2dbc: debug
+  com.celesea.activiti.*: debug
 
 server:
-  port: 0
+  port: 8080
   shutdown: graceful
 
 spring:
-  application.name: celesea-engine
+  application.name: celesea-activiti
   cloud:
     loadbalancer.ribbon.enabled: false
     nacos.config:
       file-extension: yaml
       server-addr: ${app.server.ip}:8848
   datasource:
-    url: jdbc:postgres://${app.server.ip}:5432/celesea
+    url: jdbc:postgresql://${app.server.ip}:5432/celesea
     username: farmer
     password: q1w2e3..
+    driver-class-name: org.postgresql.Driver
   rabbitmq:
     host: ${app.server.ip}
     username: farmer
@@ -33,3 +33,8 @@ spring:
     keep-alive: 10s
   codec:
     log-request-details: true
+  activiti:
+    security:
+      enabled: false
+
+springfox.documentation.swagger-ui.base-url: /documentation
