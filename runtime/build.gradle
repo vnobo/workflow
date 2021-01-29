@@ -1,0 +1,17 @@
+apply plugin: "org.springframework.boot"
+
+bootBuildImage {
+    imageName = "ghcr.io/vnobo/${rootProject.name}/${project.name}:${version}"
+}
+
+dependencies {
+    implementation project(":common")
+
+    implementation "org.activiti:activiti-spring-boot-starter:${activitiVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-jdbc"
+    implementation "org.postgresql:postgresql"
+
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
+
+}

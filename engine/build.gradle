@@ -7,6 +7,10 @@ bootBuildImage {
 dependencies {
     implementation project(":common")
 
+    implementation "org.activiti:activiti-bpmn-model:${activitiVersion}"
+    implementation "org.activiti:activiti-bpmn-converter:${activitiVersion}"
+    implementation "org.activiti:activiti-bpmn-layout:${activitiVersion}"
+
     implementation "org.springframework.boot:spring-boot-starter-amqp"
     implementation "org.springframework.boot:spring-boot-starter-data-redis-reactive"
 

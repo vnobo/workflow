@@ -2,5 +2,4 @@ rootProject.name = "celesea"
 
 include "engine"
 include "common"
-include 'activiti'
-
+include 'runtime'
